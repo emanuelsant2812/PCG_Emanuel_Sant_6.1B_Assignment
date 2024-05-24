@@ -195,7 +195,7 @@ public class City2Script : MonoBehaviour
         plane.transform.localScale = new Vector3(3000, 1, 3000);
         MeshRenderer meshRenderer = plane.GetComponent<MeshRenderer>();
         meshRenderer.material = new Material(Shader.Find("Standard"));
-        meshRenderer.material.color = Color.green;
+        meshRenderer.material.color = Color.gray;
 
     }
 
@@ -206,7 +206,7 @@ public class City2Script : MonoBehaviour
         List<Material> roofMaterialList = new List<Material>();
 
         Material blueMaterial = new Material(Shader.Find("Specular"));
-        blueMaterial.color = Color.blue;
+        blueMaterial.color = Color.black;
 
         roofMaterialList.Add(blueMaterial);
 
@@ -218,7 +218,7 @@ public class City2Script : MonoBehaviour
         List<Material> roofMaterialList = new List<Material>();
 
         Material blueMaterial = new Material(Shader.Find("Specular"));
-        blueMaterial.color = Color.blue;
+        blueMaterial.color = Color.black;
 
         roofMaterialList.Add(blueMaterial);
 
@@ -230,7 +230,7 @@ public class City2Script : MonoBehaviour
         List<Material> roofMaterialList = new List<Material>();
 
         Material blueMaterial = new Material(Shader.Find("Specular"));
-        blueMaterial.color = Color.blue;
+        blueMaterial.color = Color.black;
 
         roofMaterialList.Add(blueMaterial);
 
@@ -242,7 +242,7 @@ public class City2Script : MonoBehaviour
         List<Material> roofMaterialList = new List<Material>();
 
         Material blueMaterial = new Material(Shader.Find("Specular"));
-        blueMaterial.color = Color.blue;
+        blueMaterial.color = Color.black;
 
         roofMaterialList.Add(blueMaterial);
 
@@ -266,7 +266,7 @@ public class City2Script : MonoBehaviour
         List<Material> windowMaterialList = new List<Material>();
 
         Material grayMaterial = new Material(Shader.Find("Specular"));
-        grayMaterial.color = Color.gray;
+        grayMaterial.color = Color.white;
 
         windowMaterialList.Add(grayMaterial);
 
