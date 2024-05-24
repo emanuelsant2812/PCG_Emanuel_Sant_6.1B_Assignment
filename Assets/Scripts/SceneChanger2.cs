@@ -28,7 +28,7 @@ public class SceneChanger2 : MonoBehaviour
     {
         if (other.gameObject.tag == "Car")
         {
-            SceneManager.LoadScene("City2");
+            SceneManager.LoadScene("Terrain");
         }
     }
 

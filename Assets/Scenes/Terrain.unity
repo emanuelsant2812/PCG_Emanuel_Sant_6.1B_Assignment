@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &132179973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132179975}
+  - component: {fileID: 132179974}
+  m_Layer: 0
+  m_Name: SeaSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &132179974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132179973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3833b2184898b4899c755633b549cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seaprefab: {fileID: 2926777305860741643, guid: c791df97aedeee84393c3a6f2008c46c,
+    type: 3}
+--- !u!4 &132179975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132179973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +275,7 @@ GameObject:
   - component: {fileID: 1910882282}
   - component: {fileID: 1910882281}
   - component: {fileID: 1910882280}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +309,7 @@ MonoBehaviour:
     tileSize: {x: 20, y: 20}
     minHeight: 0.5
     maxHeight: 0.8
-  - terrainTexture: {fileID: 2800000, guid: bafadcf258df85b4686863cbaa688fba, type: 3}
+  - terrainTexture: {fileID: 2800000, guid: 52416bab9fe205141963a8bd92cf3c79, type: 3}
     tileSize: {x: 20, y: 20}
     minHeight: 0
     maxHeight: 0.4
@@ -273,10 +319,20 @@ MonoBehaviour:
     maxHeight: 0.5
   addTerrainTexture: 1
   terrainTextureBlendOffSet: 0.01
-  maxTrees: 2000
+  treeData:
+  - treeMesh: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+    minHeight: 0
+    maxHeight: 0.4
+  - treeMesh: {fileID: 117232, guid: d2f192c371f0f7f408ef6d3471aa68ca, type: 3}
+    minHeight: 0
+    maxHeight: 0.2
+  - treeMesh: {fileID: 8968353358607306817, guid: e31e8ef78f27d474d8f1f26ee9be1e79,
+      type: 3}
+    minHeight: 0
+    maxHeight: 0.6
+  maxTrees: 2147483647
   treeSpacing: 10
-  addTrees: 208
-  terrainLayerIndex: 0
+  addTrees: 1
 --- !u!154 &1910882281
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -292,7 +348,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 602567f10036d704a96eb02b373c840a, type: 2}
@@ -308,7 +364,7 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 602567f10036d704a96eb02b373c840a, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 2000
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80

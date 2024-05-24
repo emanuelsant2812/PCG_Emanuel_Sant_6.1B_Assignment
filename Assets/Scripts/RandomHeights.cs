@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [System.Serializable]
 public class TerrainTextureData
@@ -12,11 +14,12 @@ public class TerrainTextureData
 
 }
 
+[System.Serializable]
 public class TreeData
 {
     public GameObject treeMesh;
-    public int minHeight;
-    public int maxHeight;
+    public float minHeight;
+    public float maxHeight;
 }
 
 public class RandomHeights : MonoBehaviour
@@ -74,14 +77,27 @@ public class RandomHeights : MonoBehaviour
     [SerializeField]
     private bool addTrees = true;
 
-    [SerializeField]
-    private int terrainLayerIndex;
+    
+
+
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(terrain == null)
+        Material sky = new Material(Shader.Find("Skybox/Procedural"));
+        sky.SetColor("_SkyTint", Color.blue);
+
+        // make some fog
+        RenderSettings.fog = true;
+        RenderSettings.fogDensity = Random.Range(0.004f, 0.006f);
+
+
+        RenderSettings.skybox = sky;
+
+        if (terrain == null)
         {
             terrain = this.GetComponent<Terrain>();
         }
@@ -93,7 +109,7 @@ public class RandomHeights : MonoBehaviour
 
         GenrateHeights();
         AddTerrainTextures();
-       // AddTrees();
+        AddObjects();
     }
 
     private void GenrateHeights() {
@@ -207,7 +223,7 @@ public class RandomHeights : MonoBehaviour
         }
     }
 
-    private void AddTrees()
+    private void AddObjects()
     {
         TreePrototype[] trees = new TreePrototype[treeData.Count];
 
@@ -225,7 +241,7 @@ public class RandomHeights : MonoBehaviour
         {
             for (int z = 0; z < terrainData.size.z; z += treeSpacing)
             {
-                for (int x = 0; z < terrainData.size.x; x += treeSpacing)
+                for (int x = 0; x < terrainData.size.x; x += treeSpacing)
                 {
                     for (int treeIndex = 0; treeIndex < trees.Length; treeIndex++)
                     {
@@ -243,7 +259,7 @@ public class RandomHeights : MonoBehaviour
 
                                 RaycastHit raycastHit;
 
-                                int layerMask = 1 << terrainLayerIndex;
+                                int layerMask = 1 << gameObject.layer;
 
                                 if (Physics.Raycast(treePosition, -Vector3.up, out raycastHit, 100, layerMask) ||
                                     Physics.Raycast(treePosition, Vector3.up, out raycastHit, 100, layerMask))
