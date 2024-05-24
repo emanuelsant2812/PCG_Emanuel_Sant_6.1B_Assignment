@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CityScript : MonoBehaviour
+public class City1Script : MonoBehaviour
 {
 
 
@@ -53,10 +53,6 @@ public class CityScript : MonoBehaviour
         //CreateHouse();
         for (int i = 0; i < 5; i++)
         {
-            
-            //Vector3 randomPosition = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100));
-            //GameObject newHouse = Instantiate(houseGameObject, randomPosition, Quaternion.identity);
-            //newHouse.transform.parent = this.transform;
             CreateHouse();
 
         }

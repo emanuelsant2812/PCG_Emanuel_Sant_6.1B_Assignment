@@ -16,13 +16,6 @@ public class CarScript : MonoBehaviour
         Instantiate(carprefab, spawnPoint, Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //instantiate Low Poly Car 1 Varaint prefab
     
 
 

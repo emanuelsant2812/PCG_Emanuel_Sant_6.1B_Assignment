@@ -108,12 +108,17 @@ PrefabInstance:
     - target: {fileID: 7186061580063621754, guid: 699a0248b4036f64c88fd59f77bc7239,
         type: 3}
       propertyPath: Motor_Torque
-      value: 7294.5
+      value: 7.5175e+20
       objectReference: {fileID: 0}
     - target: {fileID: 7186061580063621754, guid: 699a0248b4036f64c88fd59f77bc7239,
         type: 3}
       propertyPath: Maximum_Speed
-      value: 2217
+      value: 3e+38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186061580063621754, guid: 699a0248b4036f64c88fd59f77bc7239,
+        type: 3}
+      propertyPath: Max_Steer_Angle
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7186061580063621754, guid: 699a0248b4036f64c88fd59f77bc7239,
         type: 3}
@@ -124,6 +129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Low Poly Car 1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186061580063621755, guid: 699a0248b4036f64c88fd59f77bc7239,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7186061580063621757, guid: 699a0248b4036f64c88fd59f77bc7239,
         type: 3}
